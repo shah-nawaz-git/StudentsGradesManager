@@ -71,7 +71,7 @@ namespace StudentsGradesManager
 
         static void AddSubjectToCatalog()
         {
-            string Subjects_FilePath = @"E:\Visual Studio\StudentsGradesManager\Subjects.json";
+            string Subjects_FilePath = @"Subjects.json";
             Console.Write("Enter subject name: ");
             string name = Console.ReadLine();
 
