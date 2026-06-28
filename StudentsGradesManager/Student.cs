@@ -8,13 +8,6 @@ namespace StudentsGradesManager
 {
     public class Student
     {
-
-        //The things i would like student class to have are grades against subjects, 
-        //We should be able to calculate the GPA of students
-        //we should also be able to calculate the CGPA of students
-        //Later on consider making the subjects name case insensitive
-        
-
         //Fields
         public string Name { get; set; }
         public int ID { get; set; }
@@ -40,7 +33,6 @@ namespace StudentsGradesManager
             {
                 throw new ArgumentException("This subject isn't part of the subject catalog.");
             }
-            //Optional Check: REVIEW IT LATER***
             if (Grades.Any(g => g.SubjectName.Equals(subjectName, StringComparison.OrdinalIgnoreCase)))
             {
                 throw new InvalidOperationException("Grade for this subject already exists. Use EditSubjectGrade to modify it.");
