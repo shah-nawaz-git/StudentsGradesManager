@@ -1,174 +1,91 @@
-# 🎓 Students Grades Manager  
-### Console-Based Academic Records & GPA Management System (C# / .NET)
+# Student Grades Manager
 
-<p align="center">
-  <img src="https://img.shields.io/badge/Tech-.NET-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/App-Console-lightgrey?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Data-JSON-yellow?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Testing-Unit%20Tests-green?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Status-Stable-success?style=for-the-badge">
-</p>
+A C#/.NET console application for managing student records, subjects, grades, transcripts, and credit-weighted GPA calculations.
 
----
+The project uses object-oriented programming and JSON file persistence to provide a simple academic-record management workflow without requiring an external database.
 
-## ✨ Overview
+## Features
 
-**Students Grades Manager** is a C# console application designed to simulate a simplified university grading system.  
-It allows managing **students**, **subjects**, and **grades**, while generating **transcripts** and calculating **GPA** using credit-weighted logic.
+* Add students with unique student IDs
+* Add subjects and define credit hours
+* Record and edit student grades
+* Validate subjects using a centralized subject catalog
+* Generate individual student transcripts
+* Calculate credit-weighted GPA
+* Display class average GPA
+* Save and load student and subject data from JSON files
 
-The project focuses on:
-- Object-Oriented Programming (OOP)
-- Clean data modeling
-- File-based persistence
-- Console-based UI workflows
-- Testable business logic
+## Technologies
 
----
+* C#
+* .NET
+* Object-Oriented Programming
+* Newtonsoft.Json
+* JSON file persistence
+* Console-based user interface
 
-## 📐 System Architecture
+## Project Structure
 
 ```text
-User Input (Console Menu)
-        ↓
-   GradeManager
-        ↓
-Student ─── SubjectCatalog
-        ↓
- GPA Calculation Engine
-        ↓
- JSON Persistence Layer
-```
-
----
-
-## 🧩 Core Features
-
-### 👤 Student Management
-- Add students with unique IDs
-- Store grades per subject
-- Edit existing grades
-
-### 📚 Subject Catalog
-- Add subjects with credit hours
-- Case-insensitive subject validation
-- Centralized subject lookup
-
-### 🧮 GPA & Transcript
-- Credit-weighted GPA calculation
-- Per-student transcript generation
-- Class average GPA computation
-
-### 💾 Persistence
-- Load & save data using JSON files
-- No external database required
-- Portable and easy to run
-
-### 🧪 Unit Testing
-- Separate test project
-- Validates core business logic
-
----
-
-## 🗂️ Repository Structure
-
-```txt
 StudentsGradesManager/
-│
 ├── StudentsGradesManager.sln
-├── .gitignore
-│
-├── StudentsGradesManager/              # Main Console Application
+├── Subjects.json
+├── StudentsGradesManager/
 │   ├── Program.cs
-│   ├── Student.cs
 │   ├── GradeManager.cs
+│   ├── Student.cs
 │   ├── SubjectCatalog.cs
 │   ├── SubjectInfo.cs
 │   ├── SubjectGrade.cs
 │   └── StudentsGradesManager.csproj
-│
-└── StudentsGradesManagerTests/          # Unit Tests
+└── StudentsGradesManagerTests/
     └── StudentsGradesManagerTests.csproj
 ```
 
----
+## How It Works
 
-## 🛠️ How to Run the Project
+1. The application loads the subject catalog and saved student data when it starts.
+2. Users can add subjects, students, and grades through a console menu.
+3. Each grade is connected to a subject and its credit-hour value.
+4. GPA is calculated using the student's grades and subject credit hours.
+5. Student and subject data is saved in JSON format when the application exits.
 
-### ✅ Prerequisites
-- .NET SDK installed
-- Visual Studio or VS Code
+## Run Locally
 
-### 1️⃣ Clone the Repository
+### Prerequisites
+
+* .NET SDK
+* Visual Studio or Visual Studio Code
+
+### Run the application
+
 ```bash
 git clone https://github.com/shah-nawaz-git/StudentsGradesManager.git
 cd StudentsGradesManager
-```
-
-### 2️⃣ Open the Solution
-Open `StudentsGradesManager.sln` in Visual Studio.
-
-### 3️⃣ Set Startup Project
-Ensure **StudentsGradesManager** (not the test project) is set as the startup project.
-
-### 4️⃣ Run the Application
-```bash
+dotnet restore
 dotnet run --project StudentsGradesManager/StudentsGradesManager.csproj
 ```
 
-You will see a console menu allowing you to manage students, subjects, and grades.
-
----
-
-## 📄 Data Files
+## Data Files
 
 The application uses JSON files for persistence:
-- `Subjects.json`
-- `Students_Data.json`
 
-These files are loaded at startup and saved when exiting the application.
+* `Subjects.json` stores subject names and credit hours.
+* `Students_Data.json` is created or updated when student data is saved.
 
----
+No external database is required.
 
-## 🎯 Educational Goals
+## Future Improvements
 
-This project demonstrates:
-- Practical OOP design in C#
-- Separation of concerns
-- Console-based user interaction
-- GPA calculation logic
-- Clean GitHub-ready project structure
+* Multi-semester GPA and CGPA support
+* Improved transcript formatting
+* Expanded automated test coverage
+* Database-backed persistence
+* More robust input validation
+* Improved console user interface
 
-It is suitable for:
-- Academic coursework
-- Teaching assistant / demonstrator applications
-- Entry-level portfolio projects
+## Author
 
----
-
-## 🚀 Future Enhancements
-
-- 📊 Improved tabular transcript output
-- 🗓️ Multi-semester support
-- 🗄️ Database-backed persistence
-- 🎨 Enhanced console UI formatting
-- 🧪 Expanded unit test coverage
-
----
-
-## 👨‍💻 Author
-
-**Shah Nawaz**  
-BSc Computer Science Engineering  
+Shah Nawaz
+BSc Computer Science Engineering Student
 Óbuda University, Budapest
-
----
-
-## 📬 Contact
-
-For feedback, suggestions, or collaboration:
-- Open an issue on GitHub
-- Or reach out via GitHub profile
-
----
-
-⭐ If you find this project useful, consider starring the repository!
