@@ -1,5 +1,4 @@
 ﻿using Newtonsoft.Json;
-using System.Text.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace StudentsGradesManager
 {
-//we declared the subjectcatalog class to be static, so that multiple instances of it cannot be created,
-//as all students shall share only one central version of lists of all subjects
-//The class itself and everything else in it, shall also be static
-
     public static class SubjectCatalog
     {
         //Single Field containing list of all subjects
