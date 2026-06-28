@@ -26,7 +26,7 @@ namespace StudentsGradesManager
         {
             if (gradePoint < 0 || gradePoint > 5)
             {
-                throw new ArgumentOutOfRangeException("Grade point must be between 0.0 and 4.0.");
+                throw new ArgumentOutOfRangeException("Grade point must be between 0.0 and 5.0.");
             }
 
             if (!SubjectCatalog.Subjects.Any(s => s.Name.Equals(subjectName, StringComparison.OrdinalIgnoreCase)))
